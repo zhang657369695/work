@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/echarts.min.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.min.js" ></script>
+		<script type="text/javascript" src="js/change.js" ></script>
+		<script type="text/javascript" src="js/control2.js" ></script>
+		<script type="text/javascript" src="js/control3.js" ></script>
+		<title>健康统计</title>
+	</head>
+	<body>
+		<ul class="slideNav">
+			<li><a href="#">健康地图</a></li>
+			<li><a href="#">风险预测</a></li>
+			<li class="active"><a href="#">健康统计</a></li>
+			<li><a href="#">用药监测</a></li>
+		</ul>
+		<div class="stcCont container-fluid">
+			<div class="row ectTabs">
+				<div class="col-md-4">
+					<h3>近五年高血压增加人口走势</h3>
+					<div id="ectTab1"></div>
+				</div>
+				<div class="col-md-4">
+					<h3>近五年高血压年龄分布</h3>
+					<div id="ectTab2"></div>
+				</div>
+				<div class="col-md-4 last">
+					<h3>高血压发病地区排序</h3>
+					<div id="ectTab3"></div>
+				</div>
+			</div>
+			<div class="ectTabCont">
+				<div class="row">
+					<div class="col-md-3">
+						<div id="div21"></div>
+						<h4><span>九江市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div22"></div>
+						<h4><span>南康市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div23"></div>
+						<h4><span>景德镇</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div24"></div>
+						<h4><span>萍乡市</span></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div id="div31"></div>
+						<h4><span>新余市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div32"></div>
+						<h4><span>鹰潭市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div33"></div>
+						<h4><span>赣州市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div34"></div>
+						<h4><span>宜春市</span></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div id="div41"></div>
+						<h4><span>上饶市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div42"></div>
+						<h4><span>抚州市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div43"></div>
+						<h4><span>吉安市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div44"></div>
+						<h4><span>瑞金市</span></h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3">
+						<div id="div51"></div>
+						<h4><span>瑞昌市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div52"></div>
+						<h4><span>贵溪市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div53"></div>
+						<h4><span>乐平市</span></h4>
+					</div>
+					<div class="col-md-3">
+						<div id="div54"></div>
+						<h4><span>德兴市</span></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$('#ectTab1,#ectTab2,#ectTab3').niceScroll();
+			})
+		</script>
+	</body>
+</html>

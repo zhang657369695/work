@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/jquery.range.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/echarts.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.range.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/jiangxi.js"></script>
+		<script type="text/javascript" src="js/cities.js"></script>
+		<script type="text/javascript" src="js/muturalOptions.js"></script>
+		<!--地图-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2tmXGWb7QbihtV79RY3TmGSFXDquHLzc"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+		<script type="text/javascript" src="js/hospital_heatmap.js" ></script>
+		<script type="text/javascript" src="js/circle_map.js" ></script>
+		<script type="text/javascript" src="js/hospital_map.js" ></script>
+		<title>健康地图</title>
+	</head>
+	<body>
+		<ul class="slideNav">
+			<li class="active"><a href="#">健康地图</a></li>
+			<li><a href="#">风险预测</a></li>
+			<li><a href="#">健康统计</a></li>
+			<li><a href="#">用药监测</a></li>
+		</ul>
+		<div class="idxCont">
+			<ul class="tabs clearfix">
+				<li class="active"><a href="#">高血压</a></li>
+				<li><a href="#">糖尿病</a></li>
+				<li><a href="#">艾滋病</a></li>
+				<li><a href="#">孕妇</a></li>
+				<li><a href="#">婴幼儿</a></li>
+			</ul>
+			<div class="tabDiv">
+				<div class="tab">
+					<div class="choose">
+						<a class="close">&times;</a>
+						<label class="checkbox-inline">
+							男<input type="checkbox" checked="checked" />
+						</label>
+						<label class="checkbox-inline">
+							女<input type="checkbox" />
+						</label>
+						<label class="range-inline">
+							年龄<span>1岁</span><input class="range-slider-age noscale" type="hidden" value="25,75"/><span>90岁</span>
+						</label>
+						<select class="form-control maptabs">
+						  <option>热力图</option>
+						  <option>散点图</option>
+						  <option>无</option>
+						</select><br />
+						<span>时间</span><select class="form-control time">
+							<option>2016</option>
+							<option>2017</option>
+						</select>
+						<label class="range-inline-time">
+							<input class="range-slider-time " type="hidden" value="1"/>
+						</label>
+					</div>
+				</div>
+				<div class="tab">
+					<div class="choose">
+						<a class="close">&times;</a>
+						<label class="checkbox-inline">
+							男<input type="checkbox" checked="checked" />
+						</label>
+						<label class="checkbox-inline">
+							女<input type="checkbox" />
+						</label>
+						<label class="range-inline">
+							年龄<span>1岁</span><input class="range-slider-age noscale" type="hidden" value="25,75"/><span>90岁</span>
+						</label>
+						<select class="form-control maptabs">
+						  <option>热力图</option>
+						  <option>散点图</option>
+						  <option>无</option>
+						</select><br />
+						<span>时间</span><select class="form-control time">
+							<option>2016</option>
+							<option>2017</option>
+						</select>
+						<label class="range-inline-time">
+							<input class="range-slider-time " type="hidden" value="1"/>
+						</label>
+					</div>
+				</div>
+				<div class="tab">
+					<div class="choose">
+						<a class="close">&times;</a>
+						<label class="checkbox-inline">
+							男<input type="checkbox" checked="checked" />
+						</label>
+						<label class="checkbox-inline">
+							女<input type="checkbox" />
+						</label>
+						<label class="range-inline">
+							年龄<span>1岁</span><input class="range-slider-age noscale" type="hidden" value="25,75"/><span>90岁</span>
+						</label>
+						<select class="form-control maptabs">
+						  <option>热力图</option>
+						  <option>散点图</option>
+						  <option>无</option>
+						</select><br />
+						<span>时间</span><select class="form-control time">
+							<option>2016</option>
+							<option>2017</option>
+						</select>
+						<label class="range-inline-time">
+							<input class="range-slider-time " type="hidden" value="1"/>
+						</label>
+					</div>
+				</div>
+				<div class="tab">
+					<div class="choose">
+						<a class="close">&times;</a>
+						<label class="radio-inline">
+							全部<input type="radio" name="woman" checked="checked" />
+						</label>
+						<label class="radio-inline">
+							产前<input name="woman" type="radio" />
+						</label>
+						<label class="radio-inline last">
+							产后<input name="woman" type="radio" />
+						</label>
+						<select class="form-control maptabs">
+						  <option>热力图</option>
+						  <option>散点图</option>
+						  <option>无</option>
+						</select><br />
+						<span>时间</span><select class="form-control time">
+							<option>2016</option>
+							<option>2017</option>
+						</select>
+						<label class="range-inline-time">
+							<input class="range-slider-time " type="hidden" value="1"/>
+						</label>
+					</div>
+				</div>
+				<div class="tab">
+					<div class="choose">
+						<a class="close">&times;</a>
+						<label class="radio-inline">
+							全部<input type="radio" name="child" checked="checked" />
+						</label>
+						<label class="radio-inline">
+							&lt;1岁<input name="child" type="radio" />
+						</label>
+						<label class="radio-inline">
+							1-2岁<input name="child" type="radio" />
+						</label>
+						<label class="radio-inline last">
+							3-6岁<input name="child" type="radio" />
+						</label>
+						<select class="form-control maptabs">
+						  <option>热力图</option>
+						  <option>散点图</option>
+						  <option>无</option>
+						</select><br />
+						<span>时间</span><select class="form-control time">
+							<option>2016</option>
+							<option>2017</option>
+						</select>
+						<label class="range-inline-time">
+							<input class="range-slider-time " type="hidden" value="1"/>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="rslide">
+				<input type="button" value="返回" id="return" />
+				<div id="ectMap"></div>
+				<div class="ects_exponentCont">
+					<h3>江西省<i>高血压</i>人群综合控制指数</h3>
+					<div id="ects_exponent"></div>
+					<div class="txt clearfix">
+						<span class="fl">控制良好</span>
+						<span class="fr">控制警戒</span>
+					</div>
+					<dl>
+						<dt>概述：</dt>
+						<dd>1.截止至2017年5月13日 14:00,江西全省高血压人数18万,目前控制指数2.1,处与控制良好状态。 </dd>
+						<dd>2.总体高血压患者中,男性11万人,女性7万人。</dd>
+						<dd>3.总体高血压患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>
+					</dl>
+				</div>
+				<a href="javascript:;" class="slideTiggle">显示/隐藏</a>
+			</div>
+			<div id="map"></div>
+			<div class="maptl">
+				<span>0-50</span>
+				<span>&gt;700</span>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				var maparea='南昌';
+				var tabIndex=$('.tabs>.active').index();
+				var num=Math.round(Math.random()*100);
+				var val_age=$('.range-slider-age').eq(0).val().split(',');
+				var val_time=$('.range-slider-time').eq(0).val();
+				var curval_age,curval_time;
+				//加载地图
+				var hn=$(window).height();
+				$('#map').css('height',hn+'px');
+				selectDateHigh(maparea,1);
+				//tabs
+				$('.idxCont>.tabs>li').on('click','a',function(){
+					var index=$(this).parent().index();
+					var tab=$('.tabDiv>.tab').eq(index);
+					var parent=$('.tabDiv').find('.tab').eq(index).find('.choose');
+					$(this).parent('li').addClass('active').siblings().removeClass('active').end()
+							.parents('.tabs').parent('div').find('.tabDiv>div').eq(index).show().siblings().hide().find('.choose').show();
+					tab.find('.choose').show();
+					$('.idxCont>.maptl').show();
+					parent.find('.mask').remove();
+					parent.find('.checkbox-inline>input,.radio-inline>input,.time').removeAttr('disabled');
+					$('.maptabs').eq(index).val('热力图');
+					tabIndex=index;
+					if(tab.find('.range-slider-age').length>0){
+						curval_age=tab.find('.range-slider-age').val();
+						val_age=curval_age.split(',');
+					}
+					if(tab.find('.range-slider-time').length>0){
+						curval_time=tab.find('.range-slider-time').val();
+						val_time=tab.find('.range-slider-time').val();
+					}
+					var ddStr="";
+					switch(index){
+						case 0:
+						selectDateHigh(maparea,1);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('高血压');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省高血压人数18万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体高血压患者中,男性11万人,女性7万人。</dd><dd>3.总体高血压患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>");
+						break;
+						case 1:
+						selectDateHigh(maparea,2);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('糖尿病');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省糖尿病人数18万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体糖尿病患者中,男性11万人,女性7万人。</dd><dd>3.总体糖尿病患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>");
+						break;
+						case 2:
+						selectDateHigh(maparea,3);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('艾滋病');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省艾滋病人数18万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体艾滋病患者中,男性11万人,女性7万人。</dd><dd>3.总体艾滋病患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>");
+						break;
+						case 3:
+						selectDateHigh(maparea,4);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('孕妇');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省孕妇人数26万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体生产期妇女，目前产前15万人，产后11万人。</dd>");
+						break;
+						case 4:
+						selectDateHigh(maparea,5);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('婴幼儿');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省婴幼儿人数33万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.1岁以内婴儿10万人，1-2岁幼儿8万人，3-6岁幼儿15万人。</dd>");
+						break;
+					}
+				});
+				//滑动条
+				$('.range-slider-age').jRange({
+					from: 0,
+					to: 90,
+					step: 1,
+					format: '%s',
+					width: 270,
+					showLabels: false,
+					isRange : true
+				});
+				$('.range-slider-time').jRange({
+					from: 1,
+					to: 12,
+					step: 1,
+					scale: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+					format: '%s',
+					width: 520,
+					showLabels: false,
+					showScale:true
+				});
+				
+				var timer1= setInterval(function(){
+					var typeTxt1=$('.maptabs').eq(tabIndex).val();
+					if($('.tabDiv>.tab').eq(tabIndex).find('.range-slider-age').length>0){
+						curval_age=$('.tabDiv>.tab').eq(tabIndex).find('.range-slider-age').val();
+						if(parseInt(val_age[0])!=parseInt(curval_age.split(',')[0]) || parseInt(val_age[1])!=parseInt(curval_age.split(',')[1])){
+							val_age=curval_age.split(',');
+							switch(typeTxt1){
+								case '热力图':
+								selectDateHigh(maparea,tabIndex+1);
+								break;
+								case '散点图':
+								selectDateCircle(maparea,tabIndex+1);
+								break;
+								case '无':
+								selectDateAll(maparea,tabIndex+1);
+								default:
+								selectDateHigh(maparea,tabIndex+1);
+							}
+						}
+					}
+					curval_time=$('.tabDiv>.tab').eq(tabIndex).find('.range-slider-time').val();
+					if(val_time!=curval_time){
+						val_time=curval_time;
+						switch(typeTxt1){
+								case '热力图':
+								selectDateHigh(maparea,tabIndex+1);
+								break;
+								case '散点图':
+								selectDateCircle(maparea,tabIndex+1);
+								break;
+								case '无':
+								selectDateAll(maparea,tabIndex+1);
+								default:
+								selectDateHigh(maparea,tabIndex+1);
+						}
+					}
+				},500);
+				//选择查询事件
+				$('.choose input,.choose>.time').on('change',function(){
+					var parent=$(this).parents('.choose');
+					var txt=parent.find('.maptabs').val();
+					switch(txt){
+						case '热力图':
+						selectDateHigh(maparea,tabIndex+1);
+						parent.find('.checkbox-inline>input,.radio-inline>input,.time').removeAttr('disabled');
+						parent.find('.mask').remove();
+						break;
+						case '散点图':
+						selectDateCircle(maparea,tabIndex+1);
+						parent.find('.checkbox-inline>input,.radio-inline>input,.time').removeAttr('disabled');
+						parent.find('.mask').remove();
+						break;
+						case '无':
+						selectDateAll(maparea,tabIndex+1);
+						parent.find('.checkbox-inline>input,.radio-inline>input,.time').attr('disabled','disabled');
+						parent.find('.range-inline').append(mask);
+						parent.find('.range-inline-time').append(mask);
+						break;
+						default:
+						selectDateHigh(maparea,0);
+					}
+				})
+				//地图切换
+				$('.choose>.maptabs').on('change',function(){
+					var txt=$(this).val();
+					var parent=$(this).parent('.choose');
+					var mask="<div class='mask'></div>";
+					switch(txt){
+						case '热力图':
+						selectDateHigh(maparea,0);
+						parent.find('.checkbox-inline>input,.radio-inline>input,.time').removeAttr('disabled');
+						parent.find('.mask').remove();
+						$('.idxCont>.maptl').show();
+						break;
+						case '散点图':
+						selectDateCircle(maparea,0);
+						parent.find('.checkbox-inline>input,.radio-inline>input,.time').removeAttr('disabled');
+						parent.find('.mask').remove();
+						$('.idxCont>.maptl').hide();
+						break;
+						case '无':
+						selectDateAll(maparea,0);
+						parent.find('.checkbox-inline>input,.radio-inline>input,.time').attr('disabled','disabled');
+						parent.find('.range-inline').append(mask);
+						parent.find('.range-inline-time').append(mask);
+						$('.idxCont>.maptl').hide();
+						break;
+						default:
+						selectDateHigh(maparea,0);
+					}
+				});
+				//选择区关闭
+				$('.choose>.close').on('click',function(){
+					$(this).parent('.choose').hide(200);
+				});
+				//图表初始化
+				function echartsInit(ec,option){
+					ec.setOption(option);
+				}
+				setYbp(num);
+				//右侧边栏收缩
+				$('.rslide>.slideTiggle').on('click',function(){
+					var _right=$('.rslide').css('right');
+					if(parseInt(_right)>0){
+						$('.rslide').css('right','-267px');
+						$('.idxCont>.detail').css('right','22px');
+					}else{
+						$('.rslide').css('right','7px');
+						$('.idxCont>.detail').css('right','274px');
+					}
+				});
+				//右上echarts图表
+				var myChart = echarts.init(document.getElementById('ectMap'));
+				myChart.setOption(option_jiangxi);
+				myChart.on('click',function(params){
+					$("#return").css("display","");
+					for (var j = 0; j < cities.length; j++) {
+						if(cities[j]==params.data.name){
+							var series_shi=[];
+							for (var i = 0; i < deceaseNames.length; i++) {
+								series_shi.push(
+									setSeries(deceaseNames[i],cities[j],setProvinceData(data_templet,counties[j]))
+								)
+							}
+							option_shi = {
+								series: series_shi,
+								tooltip:{
+										formatter: function(params) {
+							                var res = '2017年3月<br/>'+params.name+'共有卫生站300个<br/>';
+							                var myseries = option_shi.series;
+							                for (var i = 0; i < myseries.length; i++) {
+							                    for(var j=0;j<myseries[i].data.length;j++){
+							                        if(myseries[i].data[j].name==params.name){
+							                            res+=myseries[i].name +' : '+myseries[i].data[j].value+'</br>';
+							                        }
+							                    }
+							                }
+							                return res;
+							           },
+							           backgroundColor:'#fff',
+							           textStyle:{
+							           	color:'#000'
+							           },
+							           padding:[12,18,12,18]
+									},
+									geo : {
+								        map: cities[j],
+								        label: {
+								            emphasis: {
+								                show: false
+								            }
+								        },
+								        itemStyle: {
+								            normal: {
+								            	show:true,
+								                areaColor: '#323c48',
+								                borderColor: '#111'
+								            },
+								            emphasis: {
+								            	show:false,
+								                areaColor: '#2a333d'
+								            }
+								        }
+								    },
+							};
+							myChart.setOption(option_shi);
+						}
+					}
+					maparea=params.data.name;
+					var typeTxt=$('.maptabs').eq(tabIndex).val();
+					switch(typeTxt){
+						case '热力图':
+						selectDateHigh(params.data.name,0);
+						break;
+						case '散点图':
+						selectDateCircle(params.data.name,0);
+						break;
+						case '无':
+						selectDateAll(params.data.name,0);
+						default:
+						selectDateHigh(params.data.name,0);
+					}
+				})
+				$("#return").on('click',function(){
+					$("#return").css("display","none");
+					option_shi.series.pop();
+					delete option_shi.geo;
+					option_jiangxi.geo={
+				        map: '江西',
+				        label: {
+				            emphasis: {
+				                show: false
+				            }
+				        },
+				        itemStyle: {
+				            normal: {
+				            	show:true,
+				                areaColor: '#323c48',
+				                borderColor: '#111'
+				            },
+				            emphasis: {
+				            	show:false,
+				                areaColor: '#2a333d'
+				            }
+				        }
+				    };
+				    myChart = echarts.init(document.getElementById('ectMap'));
+					myChart.setOption(option_jiangxi);
+					myChart.on('click',function(params){
+						$("#return").css("display","");
+						for (var j = 0; j < cities.length; j++) {
+							if(cities[j]==params.data.name){
+								var series_shi=[];
+								for (var i = 0; i < deceaseNames.length; i++) {
+									series_shi.push(
+										setSeries(deceaseNames[i],cities[j],setProvinceData(data_templet,counties[j]))
+									)
+								}
+								option_shi = {
+									series: series_shi,
+									tooltip:{
+											formatter: function(params) {
+								                var res = '2017年3月<br/>'+params.name+'共有卫生站300个<br/>';
+								                var myseries = option_shi.series;
+								                for (var i = 0; i < myseries.length; i++) {
+								                    for(var j=0;j<myseries[i].data.length;j++){
+								                        if(myseries[i].data[j].name==params.name){
+								                            res+=myseries[i].name +' : '+myseries[i].data[j].value+'</br>';
+								                        }
+								                    }
+								                }
+								                return res;
+								           },
+								           backgroundColor:'#fff',
+								           textStyle:{
+								           	color:'#000'
+								           },
+								           padding:[12,18,12,18]
+										},
+										geo : {
+									        map: cities[j],
+									        label: {
+									            emphasis: {
+									                show: false
+									            }
+									        },
+									        itemStyle: {
+									            normal: {
+									            	show:true,
+									                areaColor: '#323c48',
+									                borderColor: '#111'
+									            },
+									            emphasis: {
+									            	show:false,
+									                areaColor: '#2a333d'
+									            }
+									        }
+									    },
+								};
+								myChart.setOption(option_shi);
+							}
+						}
+						maparea=params.data.name;
+						var typeTxt=$('.maptabs').eq(tabIndex).val();
+						switch(typeTxt){
+							case '热力图':
+							selectDateHigh(params.data.name,0);
+							break;
+							case '散点图':
+							selectDateCircle(params.data.name,0);
+							break;
+							case '无':
+							selectDateAll(params.data.name,0);
+							default:
+							selectDateHigh(params.data.name,0);
+						}
+					})
+				})
+			});
+		</script>
+	</body>
+</html>

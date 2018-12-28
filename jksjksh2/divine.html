@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/jquery.range.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/bootstrap/js/bootstrap.min.js" ></script>
+		<script type="text/javascript" src="js/echarts.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.range.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<script type="text/javascript" src="js/jiangxi.js"></script>
+		<script type="text/javascript" src="js/cities.js"></script>
+		<script type="text/javascript" src="js/muturalOptions.js"></script>
+		<!--地图-->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2tmXGWb7QbihtV79RY3TmGSFXDquHLzc"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+		<script type="text/javascript" src="js/project_map.js" ></script>
+		<title>风险预测</title>
+	</head>
+	<body>
+		<ul class="slideNav">
+			<li><a href="#">健康地图</a></li>
+			<li class="active"><a href="#">风险预测</a></li>
+			<li><a href="#">健康统计</a></li>
+			<li><a href="#">用药监测</a></li>
+		</ul>
+		<div class="dveCont">
+			<ul class="tabs clearfix">
+				<li class="active"><a href="#">高血压</a></li>
+				<li><a href="#">糖尿病</a></li>
+				<li><a href="#">艾滋病</a></li>
+				<li><a href="#">孕妇</a></li>
+				<li><a href="#">婴幼儿</a></li>
+			</ul>
+			<a href="#" class="detail">全省详情</a>
+			<div class="rslide">
+				<input style="display: none; position: absolute;top: 14px;left: 14px; z-index: 10;" type="button" value="返回" id="return" />
+				<div id="ectMap"></div>
+				<div class="ects_exponentCont">
+					<h3>江西省<i>高血压</i>人群综合控制指数</h3>
+					<div id="ects_exponent"></div>
+					<div class="txt clearfix">
+						<span class="fl">控制良好</span>
+						<span class="fr">控制警戒</span>
+					</div>
+					<dl>
+						<dt>概述：</dt>
+						<dd>1.截止至2017年5月13日 14:00,江西全省高血压人数30万,目前控制指数2.1,处与控制良好状态。 </dd>
+						<dd>2.总体高血压患者中,男性18万人,女性12万人。</dd>
+						<dd>3.总体高血压患者中,年龄处于50-60岁患者人数最多,数量为20万人。</dd>
+					</dl>
+				</div>
+				<a href="javascript:;" class="slideTiggle">显示/隐藏</a>
+			</div>
+			<div id="map"></div>
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			      </div>
+			      <div class="modal-body">
+			        <p>从当前到2017年9月，半年时间中人口健康档案数据分析，高血压新增患者可能有500名。<br /> 请对一下人群加以重视。</p>
+			        <div>
+			        	<select class="form-control">
+						  <option>市</option>
+						</select>
+						<select class="form-control">
+						  <option>区/县</option>
+						</select>
+						<select class="form-control">
+						  <option>乡/村</option>
+						</select>
+						<select class="form-control">
+						  <option>卫生所名称</option>
+						</select>
+			        </div>
+			        <div class="tbWrap">
+				        <table class="table">
+				        	<thead>
+				        		<tr><th>姓名</th><th>身份证</th><th>联系方式</th></tr>
+				        	</thead>
+				        		<tbody>
+				        		<tr><td>李士桢</td><td>110443198611****</td><td>15366789943</td></tr>
+				        		<tr><td>王果</td><td>110443195610****</td><td>15366789943</td></tr>
+				        		<tr><td>张萌</td><td>110443197203****</td><td>15366789943</td></tr>
+				        		<tr><td>罗利民</td><td>110443198606****</td><td>15366789943</td></tr>
+				        		<tr><td>郑志华</td><td>110443198611****</td><td>15366789943</td></tr>
+				        		<tr><td>许晴</td><td>110443198605****</td><td>15366789943</td></tr>
+				        		<tr><td>付博</td><td>110443198607****</td><td>15366789943</td></tr>
+				        		<tr><td>苏友敏</td><td>110443198604****</td><td>15366789943</td></tr>
+				        		<tr><td>柴进</td><td>110443198612****</td><td>15366789943</td></tr>
+				        		<tr><td>马金德</td><td>110443198611****</td><td>15366789943</td></tr>
+				        		<tr><td>宋姜</td><td>110443198609****</td><td>15366789943</td></tr>
+				        		<tr><td>朱友民</td><td>110443198604****</td><td>15366789943</td></tr>
+				        		<tr><td>姚建国</td><td>110443198611****</td><td>15366789943</td></tr>
+				        		<tr><td>乔山</td><td>110443198605****</td><td>15366789943</td></tr>
+				        		<tr><td>岳云鹏</td><td>110443198608****</td><td>15366789943</td></tr>
+				        		<tr><td>翟庆波</td><td>110443198602****</td><td>15366789943</td></tr>
+				        	</tbody>
+				        </table>
+			        </div>
+			      </div>
+			    </div><!-- /.modal-content -->
+			  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</div>
+		<script>
+			$(function(){
+				var maparea='南昌';
+				var tabIndex=$('.tabs>.active').index();
+				var num=Math.round(Math.random()*100);
+				//加载地图
+				var hn=$(window).height();
+				$('#map').css('height',hn+'px');
+				selectDataHeat(maparea,1);
+				//tabs
+				$('.dveCont>.tabs>li').on('click','a',function(){
+					var index=$(this).parent().index();
+					$(this).parent('li').addClass('active').siblings().removeClass('active');
+					tabIndex=index;
+					switch(index){
+						case 0:
+						selectDataHeat(maparea,1);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('高血压');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省高血压人数18万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体高血压患者中,男性11万人,女性7万人。</dd><dd>3.总体高血压患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>");
+						break;
+						case 1:
+						selectDataHeat(maparea,2);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('糖尿病');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省糖尿病人数18万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体糖尿病患者中,男性11万人,女性7万人。</dd><dd>3.总体糖尿病患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>");
+						break;
+						case 2:
+						selectDataHeat(maparea,3);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('艾滋病');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省艾滋病人数18万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体艾滋病患者中,男性11万人,女性7万人。</dd><dd>3.总体艾滋病患者中,年龄处于50-60岁患者人数最多,数量为10万人。</dd>");
+						break;
+						case 3:
+						selectDataHeat(maparea,4);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('孕妇');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省孕妇人数26万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.总体生产期妇女，目前产前15万人，产后11万人。</dd>");
+						break;
+						case 4:
+						selectDataHeat(maparea,5);
+						num=Math.round(Math.random()*100);
+						setYbp(num);
+						$('.ects_exponentCont>h3>i').text('婴幼儿');
+						$('.ects_exponentCont>dl').html("").append("<dt>概述：</dt><dd>1.截止至2017年5月13日 14:00,江西全省婴幼儿人数33万,目前控制指数2.1,处与控制良好状态。 </dd><dd>2.1岁以内婴儿10万人，1-2岁幼儿8万人，3-6岁幼儿15万人。</dd>");
+						break;
+					}
+				});
+				//全省详情
+				$('.dveCont>.detail').on('click',function(){
+					$('#myModal').modal({backdrop: 'static', keyboard: false});
+				});
+				//图表初始化
+				function echartsInit(ec,option){
+					ec.setOption(option);
+				}
+				setYbp(num);
+				//右侧边栏收缩
+				$('.rslide>.slideTiggle').on('click',function(){
+					var _right=$('.rslide').css('right');
+					if(parseInt(_right)>0){
+						$('.rslide').css('right','-267px');
+						$('.dveCont>.detail').css('right','22px');
+					}else{
+						$('.rslide').css('right','7px');
+						$('.dveCont>.detail').css('right','274px');
+					}
+				});
+				//右上echarts图表
+				var myChart = echarts.init(document.getElementById('ectMap'));
+				myChart.setOption(option_jiangxi);
+				myChart.on('click',function(params){
+					$("#return").css("display","");
+					for (var j = 0; j < cities.length; j++) {
+						if(cities[j]==params.data.name){
+							var series_shi=[];
+							for (var i = 0; i < deceaseNames.length; i++) {
+								series_shi.push(
+									setSeries(deceaseNames[i],cities[j],setProvinceData(data_templet,counties[j]))
+								)
+							}
+							option_shi = {
+								series: series_shi,
+								tooltip:{
+										formatter: function(params) {
+							                var res = '2017年3月<br/>'+params.name+'共有卫生站300个<br/>';
+							                var myseries = option_shi.series;
+							                for (var i = 0; i < myseries.length; i++) {
+							                    for(var j=0;j<myseries[i].data.length;j++){
+							                        if(myseries[i].data[j].name==params.name){
+							                            res+=myseries[i].name +' : '+myseries[i].data[j].value+'</br>';
+							                        }
+							                    }
+							                }
+							                return res;
+							           },
+							           backgroundColor:'#fff',
+							           textStyle:{
+							           	color:'#000'
+							           },
+							           padding:[12,18,12,18]
+									},
+									geo : {
+								        map: cities[j],
+								        label: {
+								            emphasis: {
+								                show: false
+								            }
+								        },
+								        itemStyle: {
+								            normal: {
+								            	show:true,
+								                areaColor: '#323c48',
+								                borderColor: '#111'
+								            },
+								            emphasis: {
+								            	show:false,
+								                areaColor: '#2a333d'
+								            }
+								        }
+								    },
+							};
+							myChart.setOption(option_shi);
+						}
+					}
+					maparea=params.data.name;
+					selectDataHeat(maparea,tabIndex+1);
+				})
+				$("#return").on('click',function(){
+					$("#return").css("display","none");
+					option_shi.series.pop();
+					delete option_shi.geo;
+					option_jiangxi.geo={
+				        map: '江西',
+				        label: {
+				            emphasis: {
+				                show: false
+				            }
+				        },
+				        itemStyle: {
+				            normal: {
+				            	show:true,
+				                areaColor: '#323c48',
+				                borderColor: '#111'
+				            },
+				            emphasis: {
+				            	show:false,
+				                areaColor: '#2a333d'
+				            }
+				        }
+				    };
+				    myChart = echarts.init(document.getElementById('ectMap'));
+					myChart.setOption(option_jiangxi);
+					myChart.on('click',function(params){
+						$("#return").css("display","");
+						for (var j = 0; j < cities.length; j++) {
+							if(cities[j]==params.data.name){
+								var series_shi=[];
+								for (var i = 0; i < deceaseNames.length; i++) {
+									series_shi.push(
+										setSeries(deceaseNames[i],cities[j],setProvinceData(data_templet,counties[j]))
+									)
+								}
+								option_shi = {
+									series: series_shi,
+									tooltip:{
+											formatter: function(params) {
+								                var res = '2017年3月<br/>'+params.name+'共有卫生站300个<br/>';
+								                var myseries = option_shi.series;
+								                for (var i = 0; i < myseries.length; i++) {
+								                    for(var j=0;j<myseries[i].data.length;j++){
+								                        if(myseries[i].data[j].name==params.name){
+								                            res+=myseries[i].name +' : '+myseries[i].data[j].value+'</br>';
+								                        }
+								                    }
+								                }
+								                return res;
+								           },
+								           backgroundColor:'#fff',
+								           textStyle:{
+								           	color:'#000'
+								           },
+								           padding:[12,18,12,18]
+										},
+										geo : {
+									        map: cities[j],
+									        label: {
+									            emphasis: {
+									                show: false
+									            }
+									        },
+									        itemStyle: {
+									            normal: {
+									            	show:true,
+									                areaColor: '#323c48',
+									                borderColor: '#111'
+									            },
+									            emphasis: {
+									            	show:false,
+									                areaColor: '#2a333d'
+									            }
+									        }
+									    },
+								};
+								myChart.setOption(option_shi);
+							}
+						}
+						maparea=params.data.name;
+						selectDataHeat(maparea,tabIndex+1);
+					})
+				})
+			});
+		</script>
+	</body>
+</html>

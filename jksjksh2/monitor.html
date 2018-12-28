@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/echarts.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.nicescroll.min.js" ></script>
+		<script type="text/javascript" src="js/common.js" ></script>
+		<title>用药监测</title>
+	</head>
+	<body>
+		<ul class="slideNav">
+			<li><a href="#">健康地图</a></li>
+			<li><a href="#">风险预测</a></li>
+			<li><a href="#">健康统计</a></li>
+			<li class="active"><a href="#">用药监测</a></li>
+		</ul>
+		<div class="mtrCont container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<h3>高血压用药情况</h3>
+					<div id="echarts1"></div>
+					<div class="info">
+						<table class="table">
+							<thead>
+								<tr><th>药品使用排名</th><th>药品名称</th><th>使用人数</th></tr>
+							</thead>
+							<tbody>
+							    <tr><td>1</td><td>硝苯地平</td><td>60万</td></tr>
+							    <tr><td>2</td><td>氯沙坦钾片</td><td>40万</td></tr>
+							    <tr><td>3</td><td>缬沙坦胶囊</td><td>40万</td></tr>
+								<tr><td>4</td><td>群尼地平</td><td>30万</td></tr>
+					           	<tr><td>5</td><td>安内真</td><td>30万</td></tr>
+					           	<tr><td>6</td><td>缬沙坦氢氯噻嗪片</td><td>30万</td></tr>
+					          	<tr><td>7</td><td>培哚普利片</td><td>20万</td></tr>
+					          	<tr><td>8</td><td>厄贝沙坦片</td><td>20万</td></tr>
+					            <tr><td>9</td><td>盐酸贝那普利片</td><td>20万</td></tr>
+					            <tr><td>10</td><td>北京降压0号</td><td>15万</td></tr>
+					            
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h3>2型糖尿病用药情况</h3>
+					<div id="echarts2"></div>
+					<div class="info">
+						<table class="table">
+							<thead>
+								<tr><th>药品使用排名</th><th>药品名称</th><th>使用人数</th></tr>
+							</thead>
+							<tbody>
+							    <tr><td>1</td><td>格列吡嗪</td><td>60万</td></tr>
+								<tr><td>2</td><td>格列美脲片</td><td>40万</td></tr>
+					            <tr><td>3</td><td>西格列汀</td><td>40万</td></tr>
+					            <tr><td>4</td><td>糖脉康颗粒</td><td>40万</td></tr>
+					            <tr><td>5</td><td>阿卡波糖</td><td>30万</td></tr>
+					            <tr><td>6</td><td>沙格列汀片</td><td>30万</td></tr>
+					            <tr><td>7</td><td>二甲双胍片</td><td>20万</td></tr>
+					            <tr><td>8</td><td>消渴丸</td><td>20万</td></tr>
+					            
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>艾滋病用药情况</h3>
+					<div id="echarts3"></div>
+					<div class="info">
+						<table class="table">
+							<thead>
+								<tr><th>药品使用排名</th><th>药品名称</th><th>使用人数</th></tr>
+							</thead>
+							<tbody>
+							    <tr><td>1</td><td>美沙酮</td><td>50万</td></tr>
+								<tr><td>2</td><td>氯氮平</td><td>40万</td></tr>
+					            <tr><td>3</td><td>氯丙嗪</td><td>40万</td></tr>
+					            <tr><td>4</td><td>齐拉西酮</td><td>40万</td></tr>
+					            <tr><td>5</td><td>阿利哌唑</td><td>30万</td></tr>
+					            <tr><td>6</td><td>氟哌啶醇</td><td>30万</td></tr>
+					            <tr><td>7</td><td>五氟利多</td><td>30万</td></tr>
+					            <tr><td>8</td><td>氟奋乃静癸酸酯</td><td>30万</td></tr>
+					            <tr><td>9</td><td>喹硫平</td><td>20万</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h3>老年人用药情况</h3>
+					<div id="echarts4"></div>
+					<div class="info">
+						<table class="table">
+							<thead>
+								<tr><th>药品使用排名</th><th>药品名称</th><th>使用人数</th></tr>
+							</thead>
+							<tbody>
+							    <tr><td>1</td><td>山莨菪碱</td><td>10万</td></tr>
+								<tr><td>2</td><td>地高辛</td><td>6万</td></tr>
+								<tr><td>3</td><td>葵花胃康宁</td><td>6万</td></tr>
+					            <tr><td>4</td><td>硝苯地平</td><td>5万</td></tr>
+					            <tr><td>5</td><td>地西泮</td><td>5万</td></tr>
+					            <tr><td>6</td><td>二甲双胍</td><td>4万</td></tr>
+					            <tr><td>7</td><td>扑尔敏</td><td>4万</td></tr>
+					            <tr><td>8</td><td>华法林</td><td>3万</td></tr>
+					            <tr><td>9</td><td>万古霉素</td><td>3万</td></tr>
+					            <tr><td>10</td><td>斯达舒</td><td>1万</td></tr>
+					            
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<h3>婴幼儿用药情况</h3>
+					<div id="echarts5"></div>
+					<div class="info">
+						<table class="table">
+							<thead>
+								<tr><th>药品使用排名</th><th>药品名称</th><th>使用人数</th></tr>
+							</thead>
+							<tbody>
+							    <tr><td>1</td><td>甲肝灭活疫苗</td><td>60万</td></tr>
+							    <tr><td>2</td><td>麻腮风疫苗</td><td>50万</td></tr>
+							    <tr><td>3</td><td>脊灰疫苗</td><td>40万</td></tr>
+							    <tr><td>4</td><td>白破疫苗</td><td>30万</td></tr>
+							    <tr><td>5</td><td>A+C群流脑疫苗</td><td>30万</td></tr>
+					            <tr><td>7</td><td>卡介苗</td><td>20万</td></tr>
+					            <tr><td>6</td><td>乙肝疫苗</td><td>13万</td></tr>
+					            <tr><td>8</td><td>百白破疫苗</td><td>5万</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function(){
+				//滚动条修饰
+				$('#echarts1,#echarts2,#echarts3,#echarts4,#echarts5,.col-md-6>.info').niceScroll();
+				$('.col-md-6>.info').niceScroll({
+					cursorcolor:'#24373e',
+					cursoropacitymax:'1',
+					cursorwidth:'10px',
+					cursorborder:'none',
+					touchbehavior: false,
+					cursorborderradius:'5px',
+					autohidemode:false
+				});
+				//图表初始化
+				function echartsInit(ec,option){
+					ec.setOption(option);
+				}
+				//高血压用药情况
+				var echarts1 = echarts.init(document.getElementById('echarts1'));
+				var option1 = {
+				    tooltip: {
+				            formatter: function (params) {
+				
+				                      var res0=JSON.stringify(params.data.value);
+				                      if(res0!='undefined'){
+				                      var res='<span>全省共'+res0+'万人在使用此药</span>';  
+				                      return res;}
+				                      else{
+				                        return '';
+				                      }
+				                  },
+				                  
+				              },   
+				    animationDurationUpdate: 1500,
+				    animationEasingUpdate: 'quinticInOut',
+				    visualMap: 
+				        {
+				            left: 'right',
+				            bottom: '30%',
+				            min: 0,
+				            max: 60,
+				            type:'piecewise',
+				            splitNumber: 6,
+				            show:false,
+				            itemHeight: 120,
+				            calculable: true,
+				            precision: 0.1,
+				            text: ['','使用量'],
+				            textGap: 30,
+				            textStyle: {
+				                color: '#000'
+				            },
+				            color:['#496782','#808a99','#d9988d','#c5b3b5','#75b2bf','#d19c5d']
+				        },
+				    series : [
+				        {
+				            type: 'graph',
+				            layout: 'force',
+				            force: {
+				            repulsion: [150,380],
+				            edgeLength:[50,150],
+				            gravity:0.2
+				        },
+				            symbolSize: 60,
+				            roam: false,
+				            focusNodeAdjacency:true,
+				            label: {
+				                normal: {
+				                    position:'insideTopRight',
+				                    show: true,
+				                    color:'#ffffff',
+				                }
+				            },
+				            edgeSymbol: ['circle', 'line'],
+				            edgeSymbolSize: [4, 10],
+				            edgeLabel: {
+				                normal: {
+				                    textStyle: {
+				                        fontSize: 20
+				                    }
+				                }
+				            },
+				            data: [{
+				                name: '缬沙坦胶囊',
+				                value:40,
+				                "draggable": "true",
+				               "symbolSize": 40,
+				               
+				            }, {
+				                name: '氯沙坦钾片',
+				                value:40,
+				                 "draggable": "true",
+				                 "symbolSize": 40,
+				            }, {
+				                name: '厄贝沙坦片',
+				                value:20,
+				                 "draggable": "true",
+				                  "symbolSize": 20,
+				            }, {
+				                name: '培哚普利片',
+				                value:20,
+				                "draggable": "true",
+				                 "symbolSize": 20,
+				            },
+				            {
+				                name: '盐酸贝那普利片',
+				                value:20,
+				                "draggable": "true",
+				                 "symbolSize": 20,
+				            },{
+				                name: '硝苯地平',
+				                value:60,
+				                x:80,
+				                y:80,
+				                "draggable": "true",
+				                 "symbolSize": 60,
+				            },
+				            {
+				                name: '缬沙坦氢氯噻嗪片',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '安内真',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '北京降压0号',
+				                value:15,
+				                "draggable": "true",
+				                 "symbolSize": 15,
+				            },{
+				                name: '群尼地平',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            }],
+				            links: [ {
+				                source: 0,
+				                target: 5,
+				                value:25,
+				                lineStyle: {
+				                    normal: {
+				                        width: 5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                        opacity:0.4,
+				                    }
+				                }
+				            }, {
+				                source: 1,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 4,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            }, {
+				                source: 3,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width:5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 4,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                        opacity:0.6
+				                    }
+				                }
+				            },{
+				                source: 7,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 7,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 9,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 2,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            },{
+				                source: 0,
+				                target: 2,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#495060',
+				                    }
+				                }
+				                },{
+				                source: 9,
+				                target: 6,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#d3bfbe',
+				                         opacity:0.8,
+				                    }
+				                }
+				                },
+				                {
+				                source: 3,
+				                target: 8,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#45687a',
+				                         opacity:0.8,
+				                    }
+				                }
+				                }
+				           
+				        
+				            ],
+				            lineStyle: {
+				                normal: {
+				                    opacity: 0.9,
+				                    width: 2,
+				                    curveness: 0
+				                }
+				            }
+				        }
+				    ]
+				};
+				echartsInit(echarts1,option1);
+				//2型糖尿病用药情况
+				var echarts2 = echarts.init(document.getElementById('echarts2'));
+				var option2 = {
+				    tooltip: {
+				            formatter: function (params) {
+				                      var res0=JSON.stringify(params.data.value);
+				                      if(res0!='undefined'){
+				                      var res='<span>全省共'+res0+'万人在使用此药</span>';  
+				                      return res;}
+				                      else{
+				                        return '';
+				                      }
+				                  },
+				              },   
+				    animationDurationUpdate: 1500,
+				    animationEasingUpdate: 'quinticInOut',
+				    visualMap: 
+				        {
+				            left: 'right',
+				            bottom: '30%',
+				            min: 0,
+				            max: 60,
+				            type:'piecewise',
+				            splitNumber: 6,
+				            show:false,
+				            itemHeight: 120,
+				            calculable: true,
+				            precision: 0.1,
+				            text: ['','使用量'],
+				            textGap: 30,
+				            textStyle: {
+				                color: '#000'
+				            },
+				            color:['#496782','#808a99','#d9988e','#c5b3b5','#75b2bf','#d19c5d']
+				        },
+				    series : [
+				        {
+				            type: 'graph',
+				            layout: 'force',
+				            force: {
+				            repulsion: [150,380],
+				            edgeLength:[50,150],
+				            gravity:0.2
+				        },
+				            symbolSize: 50,
+				            roam: false,
+				            focusNodeAdjacency:true,
+				            label: {
+				                normal: {
+				                    position:'insideTopRight',
+				                    show: true,
+				                    color:'#ffffff',
+				                }
+				            },
+				            edgeSymbol: ['circle', 'line'],
+				            edgeSymbolSize: [4, 10],
+				            edgeLabel: {
+				                normal: {
+				                    textStyle: {
+				                        fontSize: 20
+				                    }
+				                }
+				            },
+				            data: [{
+				                name: '阿卡波糖',
+				                value:30,
+				                "draggable": "true",
+				               "symbolSize": 30,
+				            }, {
+				                name: '西格列汀',
+				                value:40,
+				                
+				                 "draggable": "true",
+				                 "symbolSize": 40,
+				            }, {
+				                name: '二甲双胍片',
+				                value:20,
+				                 "draggable": "true",
+				                  "symbolSize": 20,
+				            }, {
+				                name: '格列美脲片',
+				                value:40,
+				                "draggable": "true",
+				                 "symbolSize": 40,
+				            },
+				            {
+				                name: '沙格列汀片',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '格列吡嗪',
+				                value:60,
+				                x:100,
+				                y:100,
+				                //"draggable": "true",
+				                 "symbolSize": 60,
+				            },
+				            {
+				                name: '消渴丸',
+				                value:20,
+				                "draggable": "true",
+				                 "symbolSize": 20,
+				            },{
+				                name: '糖脉康颗粒',
+				                value:40,
+				                "draggable": "true",
+				                 "symbolSize": 40,
+				            }],
+				            // links: [],
+				             links: [ {
+				                source: 0,
+				                target: 5,
+				                value:25,
+				                lineStyle: {
+				                    normal: {
+				                        width: 5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                        opacity:0.4,
+				                    }
+				                }
+				            }, {
+				                source: 1,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 4,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            }, {
+				                source: 3,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width:5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 4,
+				                target: 6,
+				                value:35,
+				                lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#c3b3b5',
+				                        opacity:0.6
+				                    }
+				                }
+				            }, {
+				                source: 3,
+				                target: 4,
+				                value:35,
+				                lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#c3b3b5',
+				                        opacity:0.6
+				                    }
+				                }
+				            },{
+				                source: 7,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 7,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            },{
+				                source: 4,
+				                target: 6,
+				                value:35,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 4,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            },  {
+				                source: 0,
+				                target: 2,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#495060',
+				                    }
+				                }
+				                },
+				                {
+				                source: 3,
+				                target: 8,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#45687a',
+				                         opacity:0.8,
+				                    }
+				                }
+				                }
+				                ],
+				            lineStyle: {
+				                normal: {
+				                    opacity: 0.9,
+				                    width: 2,
+				                    curveness: 0
+				                }
+				            }
+				        }
+				    ]
+				};
+				echartsInit(echarts2,option2);
+				//高度精神病用药情况
+				var echarts3 = echarts.init(document.getElementById('echarts3'));
+				var option3 = {
+				    tooltip: {
+				            formatter: function (params) {
+				                      var res0=JSON.stringify(params.data.value);
+				                      if(res0!='undefined'){
+				                      var res='<span>全省共'+res0+'万人在使用此药</span>';  
+				                      return res;}
+				                      else{
+				                        return '';
+				                      }
+				                  },
+				                  
+				              },   
+				    animationDurationUpdate: 1500,
+				    animationEasingUpdate: 'quinticInOut',
+				    visualMap: 
+				        {
+				            left: 'right',
+				            bottom: '30%',
+				            min: 0,
+				            max: 60,
+				            type:'piecewise',
+				            splitNumber: 6,
+				            show:false,
+				            itemHeight: 120,
+				            calculable: true,
+				            precision: 0.1,
+				            text: ['','使用量'],
+				            textGap: 30,
+				            textStyle: {
+				                color: '#000'
+				            },
+				            color:['#496782','#808a99','#d9988d','#c5b3b5','#75b2bf','#d19c5d']
+				        },
+				    series : [
+				        {
+				            type: 'graph',
+				            layout: 'force',
+				            force: {
+				            repulsion: [150,380],
+				            edgeLength:[50,150],
+				            gravity:0.2
+				        },
+				            symbolSize: 50,
+				            roam: false,
+				            focusNodeAdjacency:true,
+				            label: {
+				                normal: {
+				                    position:'insideTopRight',
+				                    show: true,
+				                    color:'#ffffff',
+				                }
+				            },
+				            edgeSymbol: ['circle', 'line'],
+				            edgeSymbolSize: [4, 10],
+				            edgeLabel: {
+				                normal: {
+				                    textStyle: {
+				                        fontSize: 20
+				                    }
+				                }
+				            },
+				            data: [{
+				                name: '氯氮平',
+				                value:40,
+				                "draggable": "true",
+				               "symbolSize": 40,
+				            }, {
+				                name: '氯丙嗪',
+				                value:40,
+				                
+				                 "draggable": "true",
+				                 "symbolSize": 40,
+				            }, {
+				                name: '喹硫平',
+				                value:20,
+				                 "draggable": "true",
+				                  "symbolSize": 20,
+				            }, {
+				                name: '齐拉西酮',
+				                value:40,
+				                "draggable": "true",
+				                 "symbolSize": 40,
+				            },
+				            {
+				                name: '阿利哌唑',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '美沙酮',
+				                value:50,
+				                x:100,
+				                y:100,
+				                "symbolSize": 60,
+				            },
+				            {
+				                name: '氟哌啶醇',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '五氟利多',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '氟奋乃静癸酸酯',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            }],
+				             links: [ {
+				                source: 0,
+				                target: 5,
+				                value:25,
+				                lineStyle: {
+				                    normal: {
+				                        width: 5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                        opacity:0.4,
+				                    }
+				                }
+				            }, {
+				                source: 1,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 4,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            }, {
+				                source: 3,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width:5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 4,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#c3b2b3',
+				                        opacity:0.6
+				                    }
+				                }
+				            },{
+				                source: 7,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 9,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 9,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 2,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            },{
+				                source: 0,
+				                target: 2,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#495060',
+				                    }
+				                }
+				                },{
+				                source: 9,
+				                target: 6,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#d3bfbe',
+				                         opacity:0.8,
+				                    }
+				                }
+				                },
+				                {
+				                source: 3,
+				                target: 8,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#45687a',
+				                         opacity:0.8,
+				                    }
+				                }
+				                }
+				           
+				        
+				            ],
+				            lineStyle: {
+				                normal: {
+				                    opacity: 0.9,
+				                    width: 2,
+				                    curveness: 0
+				                }
+				            }
+				        }
+				    ]
+				};
+				echartsInit(echarts3,option3);
+				//老年人用药情况
+				var echarts4 = echarts.init(document.getElementById('echarts4'));
+				var option4 = {
+				    tooltip: {
+				            formatter: function (params) {
+				
+				                      var res0=JSON.stringify(params.data.value);
+				                      if(res0!='undefined'){
+				                      var res='<span>全省共'+res0+'万人在使用此药</span>';  
+				                      return res;}
+				                      else{
+				                        return '';
+				                      }
+				                  },
+				              },   
+				    animationDurationUpdate: 1500,
+				    animationEasingUpdate: 'quinticInOut',
+				    visualMap: 
+				        {
+				            left: 'right',
+				            bottom: '30%',
+				            min: 0,
+				            max: 20,
+				            type:'piecewise',
+				            splitNumber: 6,
+				            show:false,
+				            itemHeight: 120,
+				            calculable: true,
+				            precision: 0.1,
+				            text: ['','使用量'],
+				            textGap: 30,
+				            textStyle: {
+				                color: '#000'
+				            },
+				            color:['#496782','#808a99','#d9988d','#c5b3b5','#75b2bf','#d19c5d']
+				        },
+				    series : [
+				        {
+				            type: 'graph',
+				            layout: 'force',
+				            force: {
+				            repulsion: [150,380],
+				            edgeLength:[5,150],
+				            gravity:0.2
+				        },
+				            symbolSize: 50,
+				            roam: false,
+				            focusNodeAdjacency:true,
+				            label: {
+				                normal: {
+				                    position:'insideTopRight',
+				                    show: true,
+				                    color:'#ffffff',
+				                }
+				            },
+				            edgeSymbol: ['circle', 'line'],
+				            edgeSymbolSize: [4, 10],
+				            edgeLabel: {
+				                normal: {
+				                    textStyle: {
+				                        fontSize: 20
+				                    }
+				                }
+				            },
+				            data: [{
+				                name: '地高辛',
+				                value:6,
+				                "draggable": "true",
+				               "symbolSize": 40,
+				            }, {
+				                name: '硝苯地平',
+				                value:5,
+				                
+				                 "draggable": "true",
+				                 "symbolSize": 40,
+				            }, {
+				                name: '扑尔敏',
+				                value:4,
+				                 "draggable": "true",
+				                  "symbolSize": 20,
+				            }, {
+				                name: '地西泮',
+				                value:5,
+				                "draggable": "true",
+				                 "symbolSize": 40,
+				            },
+				            {
+				                name: '万古霉素',
+				                value:3,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '山莨菪碱',
+				                value:10,
+				                x:100,
+				                y:100,
+				                 "symbolSize": 60,
+				            },
+				            {
+				                name: '华法林',
+				                value:3,
+				                "draggable": "true",
+				                 "symbolSize": 20,
+				            },{
+				                name: '葵花胃康宁',
+				                value:6,
+				                "draggable": "true",
+				                 "symbolSize": 40,
+				            },{
+				                name: '斯达舒',
+				                value:1,
+				                "draggable": "true",
+				                 "symbolSize": 20,
+				            },{
+				                name: '二甲双胍',
+				                value:4,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            }],
+				           links: [ {
+				                source: 0,
+				                target: 5,
+				                value:25,
+				                lineStyle: {
+				                    normal: {
+				                        width: 5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                        opacity:0.4,
+				                    }
+				                }
+				            }, {
+				                source: 1,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 4,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            }, {
+				                source: 3,
+				                target: 5,
+				                value:25,
+				                 lineStyle: {
+				                    normal: {
+				                        width:5,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 4,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                        opacity:0.6
+				                    }
+				                }
+				            },{
+				                source: 7,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 9,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				                
+				            }, {
+				                source: 9,
+				                target: 5,
+				                value:28,
+				                lineStyle: {
+				                    normal: {
+				                        width: 2,
+				                        curveness: 0.3,
+				                        color:'#4b6a84',
+				                    }
+				                }
+				            },{
+				                source: 0,
+				                target: 2,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#495060',
+				                    }
+				                }
+				                },{
+				                source: 9,
+				                target: 6,
+				                value:30,
+				                 lineStyle: {
+				                    normal: {
+				                        width: 3,
+				                        curveness: 0.3,
+				                        color:'#d3bfbe',
+				                         opacity:0.8,
+				                    }
+				                }
+				                },
+				                {
+					                source: 3,
+					                target: 8,
+					                value:30,
+					                lineStyle: {
+					                    normal: {
+					                        width: 3,
+					                        curveness: 0.3,
+					                        color:'#45687a',
+					                         opacity:0.8,
+					                    }
+					                }
+				                }
+				        
+				            ],
+				            lineStyle: {
+				                normal: {
+				                    opacity: 0.9,
+				                    width: 2,
+				                    curveness: 0
+				                }
+				            }
+				        }
+				    ]
+				};
+				echartsInit(echarts4,option4);
+				//婴幼儿用药情况
+				var echarts5 = echarts.init(document.getElementById('echarts5'));
+				var option5 = {
+				    tooltip: {
+				            formatter: function (params) {
+				                      var res0=JSON.stringify(params.data.value);
+				                      if(res0!='undefined'){
+				                      var res='<span>全省共'+res0+'万人在使用此药</span>';  
+				                      return res;}
+				                      else{
+				                        return '';
+				                      }
+				                  },
+				                  
+				              },   
+				    animationDurationUpdate: 1500,
+				    animationEasingUpdate: 'quinticInOut',
+				    visualMap: 
+				        {
+				            left: 'right',
+				            bottom: '30%',
+				            min: 0,
+				            max: 60,
+				            type:'piecewise',
+				            splitNumber: 6,
+				            show:false,
+				            itemHeight: 120,
+				            calculable: true,
+				            precision: 0.1,
+				            text: ['','使用量'],
+				            textGap: 30,
+				            textStyle: {
+				                color: '#000'
+				            },
+				            color:['#496782','#808a99','#d9988d','#c5b3b5','#75b2bf','#d19c5d']
+				        },
+				    series : [
+				        {
+				            type: 'graph',
+				            layout: 'force',
+				            force: {
+				            repulsion: [150,380],
+				            edgeLength:[50,150],
+				            gravity:0.2
+				        },
+				            symbolSize: 60,
+				            roam: false,
+				            
+				            label: {
+				                normal: {
+				                    position:'insideTopRight',
+				                    show: true,
+				                    color:'#ffffff',
+				                }
+				            },
+				            edgeSymbol: ['circle', 'line'],
+				            edgeSymbolSize: [4, 10],
+				            edgeLabel: {
+				                normal: {
+				                    textStyle: {
+				                        fontSize: 20
+				                    }
+				                }
+				            },
+				            data: [{
+				                name: '乙肝疫苗',
+				                value:13,
+				                "draggable": "true",
+				               "symbolSize": 30,
+				            }, {
+				                name: '卡介苗',
+				                value:20,
+				                
+				                 "draggable": "true",
+				                 "symbolSize": 20,
+				            }, {
+				                name: '脊灰疫苗',
+				                value:40,
+				                 "draggable": "true",
+				                  "symbolSize": 40,
+				            }, {
+				                name: '百白破疫苗',
+				                value:5,
+				                "draggable": "true",
+				                 "symbolSize": 15,
+				            },
+				            {
+				                name: '白破疫苗',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '麻腮风疫苗',
+				                value:50,
+				                x:100,
+				                y:100,
+				                 "symbolSize": 50,
+				            },
+				            {
+				                name: 'A+C群流脑疫苗',
+				                value:30,
+				                "draggable": "true",
+				                 "symbolSize": 30,
+				            },{
+				                name: '甲肝灭活疫苗',
+				                value:60,
+				                "draggable": "true",
+				                 "symbolSize": 60,
+				            }],
+				        }
+				    ]
+				};
+				echartsInit(echarts5,option5);
+			});
+		</script>
+	</body>
+</html>
